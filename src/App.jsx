@@ -8,7 +8,6 @@ function App() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [position, setPosition] = useState(null)
-  const [show, setShow] = useState("false")
 
   
     const handleMouseMove = (event) => {
@@ -45,16 +44,16 @@ function App() {
       <div onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave} style={{
         display: 'flex', cursor:'pointer',
-        width: '300px', height: '100px', backgroundColor: 'white', color: 'black',alignItems:'center',justifyContent:'center',  borderRadius: '15px',
-        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px',
-        
+        width: '300px', height: '100px', backgroundColor: '#F5F5F5', color: 'black',alignItems:'center',justifyContent:'center',  borderRadius: '15px',
+        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px'
 }}>
 
         HOVER OVER ME!
         
 
-      </div><p style={{color:'black'}}>Mouse Position: {mousePosition.x}, {mousePosition.y}</p>
-<ToolTip show={show} position={position} />
+      </div>
+      {/* <p style={{ color: 'black' }}>Mouse Position: {mousePosition.x}, {mousePosition.y}</p> */}
+<ToolTip  mousePosition={mousePosition} position={position} />
     </>
   )
 }
